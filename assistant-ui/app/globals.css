@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 767px) {
+    .aui-assistant-message-root, .aui-user-message-root {
+        max-width: 90%;
+    }
+    .aui-assistant-message-content {
+        max-width: 100%;
+    }
+}
+
+rh-card h4 {
+    font-weight: bold;
+}
+rh-card img {
+    /* margin: 10px 25px; */
+    max-height: 500px;
+}

@@ -45,7 +45,6 @@ export const updateState = async (
 export const sendMessage = async (params: {
   threadId: string;
   messages: LangChainMessage[];
-  token?: string;
 }) => {
   const client = createClient();
 
@@ -63,12 +62,7 @@ export const sendMessage = async (params: {
     };
   const config = {
     configurable: {
-    //   model_name: "openai",
-        // pass token as configuration - workaround of no possibility to pass http header
-        // https://github.com/langchain-ai/langgraph/discussions/1854
-        token: params.token,
-        // TODO: Pass user_id for searching history by user_id
-        user_id: "123456"
+        summary_enabled: true,
     },
   };
 

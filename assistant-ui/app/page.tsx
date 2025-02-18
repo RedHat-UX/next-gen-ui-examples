@@ -13,9 +13,11 @@ export default function Home() {
         welcome={{
           suggestions: [
             {
-              prompt: "What is Toy Story about?",
+              //prompt: "What is Toy Story about?",
+              prompt: "What is movie My Name is Khan about?",
             }, {
-              prompt: "Who is Tom Hanks and Tim Allen?"
+              //Who is Tom Hanks?
+              prompt: "Who is Shah Rukh Khan?"
             }
           ],
         }}

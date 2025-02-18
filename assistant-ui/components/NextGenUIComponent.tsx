@@ -1,6 +1,6 @@
 import { useRef, useLayoutEffect } from 'react';
 
-export function DangrousElement({ markup }:{markup: string}) {
+export function NextGenUIComponent({ markup }:{markup: string}) {
 	const elRef = useRef<HTMLDivElement>(null);
 
 	useLayoutEffect(() => {
