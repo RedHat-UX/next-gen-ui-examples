@@ -1,6 +1,8 @@
 'use client'
 
 import "./globals.css";
+import "./layout-two-columns.css";
+import "./disable-debug.css";
 
 import { cn } from "@/lib/utils";
 import { Montserrat } from "next/font/google";
@@ -10,16 +12,16 @@ import Script from 'next/script';
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <MyRuntimeProvider>
-      <html lang="en">
-        <head>
-          <Script type="importmap" id="import-map-source" strategy="beforeInteractive">
-            {`{
+    return (
+        <MyRuntimeProvider>
+            <html lang="en">
+                <head>
+                    <Script type="importmap" id="import-map-source" strategy="beforeInteractive">
+                        {`{
               "imports": {
                 "@rhds/elements/": "https://cdn.jsdelivr.net/npm/@rhds/elements@2.1.1/elements/",
                 "@rhds/icons/": "https://cdn.jsdelivr.net/npm/@rhds/icons@1.1.2/"
@@ -52,13 +54,13 @@ export default function RootLayout({
                 }
               }
             }`}
-          </Script>
-        </head>
+                    </Script>
+                </head>
 
-        <body className={cn(montserrat.className, "h-dvh")}>
-          {children}
-        </body>
-      </html>
-    </MyRuntimeProvider>
-  );
+                <body className={cn(montserrat.className, "h-dvh")}>
+                    {children}
+                </body>
+            </html>
+        </MyRuntimeProvider>
+    );
 }

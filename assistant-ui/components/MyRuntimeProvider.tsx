@@ -6,30 +6,30 @@ import { useLangGraphRuntime } from "@assistant-ui/react-langgraph";
 import { createThread, sendMessage } from "@/lib/chatApi";
 
 export function MyRuntimeProvider({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  const threadIdRef = useRef<string | undefined>();
+    const threadIdRef = useRef<string | undefined>();
 
-  const runtime = useLangGraphRuntime({
-    threadId: threadIdRef.current,
-    stream: async (messages) => {
-      if (!threadIdRef.current) {
-        const { thread_id } = await createThread();
-        threadIdRef.current = thread_id;
-      }
-      const threadId = threadIdRef.current;
-      return sendMessage({
-        threadId,
-        messages,
-      });
-    },
-  });
+    const runtime = useLangGraphRuntime({
+        threadId: threadIdRef.current,
+        stream: async (messages) => {
+            if (!threadIdRef.current) {
+                const { thread_id } = await createThread();
+                threadIdRef.current = thread_id;
+            }
+            const threadId = threadIdRef.current;
+            return sendMessage({
+                threadId,
+                messages,
+            });
+        },
+    });
 
-  return (
-    <AssistantRuntimeProvider runtime={runtime}>
-      {children}
-    </AssistantRuntimeProvider>
-  );
+    return (
+        <AssistantRuntimeProvider runtime={runtime}>
+            {children}
+        </AssistantRuntimeProvider>
+    );
 }

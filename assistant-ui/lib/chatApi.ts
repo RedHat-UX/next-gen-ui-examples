@@ -63,6 +63,7 @@ export const sendMessage = async (params: {
   const config = {
     configurable: {
         summary_enabled: true,
+        component_system: "rhds", // "patternfly"
     },
   };
 

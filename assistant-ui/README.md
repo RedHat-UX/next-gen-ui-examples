@@ -1,4 +1,4 @@
-# Assistent UI & LangGraph Example
+# Assistent UI & Next Gen UI with LangGraph Example
 
 This is the [assistant-ui](https://github.com/Yonom/assistant-ui) example for Next Gen UI powered by LangGraph.
 
@@ -22,4 +22,4 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+It's expected to have running Next Gen UI Agent with LangGraph Server providing `movies-assistant`
