@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+rh-card h4 {
+    font-weight: bold;
+}

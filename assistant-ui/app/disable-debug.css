@@ -1,0 +1,9 @@
+#tool-message #tool-debug, #tool-message.not_genie {
+    display: none;
+}
+#tool-message .genie {
+    display: block;
+}
+.aui-assistant-action-bar-root {
+    display: none;
+}

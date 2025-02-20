@@ -1,0 +1,27 @@
+@media (min-width: 767px) {
+
+    .aui-assistant-message-root,
+    .aui-user-message-root {
+        max-width: 90%;
+    }
+
+    .aui-assistant-message-content {
+        max-width: 100%;
+        display: flex;
+    }
+
+    .aui-assistant-message-content div {
+        width: 50%;
+    }
+
+    .aui-assistant-message-content #tool-message {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+#genie_component {
+    div {
+        width: 100%;
+    }
+}
