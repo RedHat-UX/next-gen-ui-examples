@@ -1,0 +1,10 @@
+streamlit
+dotenv
+llama_stack_client
+watchdog
+next_gen_ui_llama_stack
+next_gen_ui_testing
+
+# Local Development:
+# pip uninstall -y ../../next-gen-ui-agent/dist/next_gen_ui*.whl
+# pip install ../../next-gen-ui-agent/dist/next_gen_ui*.whl
