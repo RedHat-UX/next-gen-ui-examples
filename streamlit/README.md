@@ -3,6 +3,7 @@
 Next Gen UI examples powered by Streamlit UI
 
 * `movies_llama_stack_app.py` - Movies assistent powered by Llama Stack
+* `movies_langgraph_app.py` - Movies assistent powered by Lang Graph
 
 ## Setup 
 
@@ -18,9 +19,24 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Llama-stack setup
+### Ollama setup
 
-Install and run [Ollama server](https://ollama.com/download).
+Install [Ollama server](https://ollama.com/download).
+
+Pull `llama3.2:latest` model
+```sh
+ollama pull llama3.2:latest
+ollama list
+```
+
+## Run Streamlit LangGraph App
+
+```sh
+streamlit run movies_langgraph_app.py
+```
+
+
+### Llama-stack setup
 
 Run Ollama model
 ```sh
@@ -44,7 +60,7 @@ podman run -it --rm \
 Use `--env OLLAMA_URL=http://host.docker.internal:11434` if using docker.
 
 
-## Run Streamlit App
+## Run Streamlit Llama Stack App
 
 Llama stack app:
 
