@@ -5,6 +5,9 @@ watchdog
 next_gen_ui_llama_stack
 next_gen_ui_testing
 
+langgraph
+langchain-openai
+
 # Local Development:
 # pip uninstall -y ../../next-gen-ui-agent/dist/next_gen_ui*.whl
 # pip install ../../next-gen-ui-agent/dist/next_gen_ui*.whl
