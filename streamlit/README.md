@@ -9,13 +9,23 @@ Next Gen UI examples powered by Streamlit UI
 
 ### Python setup
 
+Setup virtual env:
 ```sh
 cd streamlit
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
+Install dependencies:
 ```sh
+pip install -r requirements.txt
+```
+
+Alternativelly you can install local build of Next Gen UI from `dist` directory:
+```sh
+pip uninstall -y ../../next-gen-ui-agent/dist/next_gen_ui*.whl
+pip install ../../next-gen-ui-agent/dist/next_gen_ui*.whl
+# and install again other deps:
 pip install -r requirements.txt
 ```
 
@@ -29,12 +39,17 @@ ollama pull llama3.2:latest
 ollama list
 ```
 
-## Run Streamlit LangGraph App
+## LangGraph Examples
+
+There is nothing to set up. Just run the example.
+
+### Run Streamlit LangGraph App
 
 ```sh
 streamlit run movies_langgraph_app.py
 ```
 
+## Llama-stack Examples
 
 ### Llama-stack setup
 
@@ -60,9 +75,7 @@ podman run -it --rm \
 Use `--env OLLAMA_URL=http://host.docker.internal:11434` if using docker.
 
 
-## Run Streamlit Llama Stack App
-
-Llama stack app:
+### Run Streamlit Llama Stack App
 
 ```sh
 streamlit run movies_llama_stack_app.py
