@@ -1,5 +1,6 @@
 from typing import TypedDict, Optional, Literal
 import logging
+import json
 
 from langgraph.prebuilt import create_react_agent
 from langchain_core.runnables.config import RunnableConfig
@@ -30,7 +31,10 @@ def movie_search_by_title(title: Optional[str]):
         title: Movie title e.g. 'Toy Story'
     """
     logger.debug("movie_search_by_title, title=%s", title)
-    return data_set_movies.find_movie(title)
+    movies_data = data_set_movies.find_movie(title)
+    m_str = json.dumps(movies_data, default=str)
+    logger.debug("movie: %s", m_str)
+    return m_str
 
 
 # @tool(

@@ -4,6 +4,7 @@ from streamlit_common import display_chat_history
 
 import asyncio
 import logging
+import json
 
 from llama_stack_client import AsyncLlamaStackClient
 from llama_stack_client.types import UserMessage
@@ -47,9 +48,10 @@ def get_movies_agent():
         """
         logger.debug("Get movie, title: %s", title)
         # imported from next_gen_ui_testing
-        response = data_set_movies.find_movie(title)
-        logger.debug("returning: %s", response)
-        return response
+        movies_data = data_set_movies.find_movie(title)
+        response_str = json.dumps(movies_data, default=str)
+        logger.debug("returning: %s", response_str)
+        return response_str
 
     INFERENCE_MODEL = os.getenv("INFERENCE_MODEL")
     movies_agent = AsyncAgent(  # ReActAgent
