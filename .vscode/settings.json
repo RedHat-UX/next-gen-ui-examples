@@ -1,0 +1,14 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/streamlit/.venv/bin/python",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.extraPaths": [
+        "streamlit"
+    ],
+    "python.testing.pytestArgs": [
+        "--no-header",
+        "-m",
+        "not distribution"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
