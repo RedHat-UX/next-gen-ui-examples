@@ -1,6 +1,8 @@
 import streamlit
 import logging
 
+from rhds_component import ngui_rhds_component
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -16,6 +18,6 @@ def display_chat_history(st: streamlit, messages):
             else:
                 col1, col2 = st.columns(2, gap="medium", border=False)
                 with col1:
-                    st.html(message["ngui"])
+                    ngui_rhds_component(message["ngui"])
                 with col2:
                     st.markdown(message["content"])
