@@ -97,16 +97,7 @@ def create_assistant_graph(model: ChatOpenAI, ngui_model: ChatOpenAI):
                 }
             },
         )
-        # Pick just last messages till human message
-        agent_result = []
-        result_messages = list(reversed(result["messages"]))
-        for m in result_messages:
-            if m.type == "human":
-                break
-            agent_result.append(m)
-        agent_result.reverse()
-
-        return {"messages": agent_result}
+        return {"messages": result["messages"]}
 
     async def summary(state: AgentState, config: RunnableConfig):
         configurable: AgentConfig = config.get("configurable", {})

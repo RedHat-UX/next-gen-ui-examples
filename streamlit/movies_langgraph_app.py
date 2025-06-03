@@ -4,6 +4,8 @@ from streamlit_common import display_chat_history
 import asyncio
 import logging
 
+from rhds_component import ngui_rhds_component
+
 from movies_langgraph_graph import create_assistant_graph
 from langchain_openai import ChatOpenAI
 
@@ -84,8 +86,6 @@ async def start_chat():
             col1, col2 = st.columns(2, gap="medium", border=False)
             with col2:
                 message_placeholder = st.empty()
-            with col1:
-                ngui_placeholder = st.empty()
 
             try:
                 async for msg, metadata in get_assistent_graph().astream(
@@ -97,14 +97,20 @@ async def start_chat():
                     if langgraph_node == "summary":
                         full_response += msg.content
                         message_placeholder.markdown(full_response)
-                    if langgraph_node == "design_system_handler":
+                    elif langgraph_node == "design_system_handler" and msg.content != '':
                         ngui_response += msg.content
-                        ngui_placeholder.html(ngui_response)
+                        with col1:
+                            ngui_rhds_component(
+                                ngui_response, key=msg.id
+                            )
             except Exception as e:
                 logger.exception("Error in execution")
                 ngui_response = e
                 full_response = ""
-                ngui_placeholder.text(ngui_response)
+                with col1:
+                    ngui_rhds_component(
+                        ngui_response, key=msg.id
+                    )
         # save to the history
         st.session_state.messages.append(
             {"role": "assistant", "content": full_response, "ngui": ngui_response}
