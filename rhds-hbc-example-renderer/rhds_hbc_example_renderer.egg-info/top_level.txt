@@ -1,1 +1,0 @@
-rhds_hbc_example_renderer
