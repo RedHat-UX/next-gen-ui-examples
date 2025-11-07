@@ -7,7 +7,7 @@ This package provides an example implementation of how to extend the Red Hat Des
 ### Prerequisites
 
 - Python 3.12 or higher
-- Access to the `next_gen_ui_agent`, `next_gen_ui_rhds_renderer`, and `next_gen_ui_testing` packages
+- Access to the `next_gen_ui_agent`, `next_gen_ui_rhds_renderer`, `jinja2`, and `next_gen_ui_testing` packages. All of them should be accessible from standard python repository.
 
 ### Install from source
 
@@ -34,7 +34,7 @@ This package provides an example implementation of how to extend the Red Hat Des
 
 ### Local Development Setup
 
-If you're developing alongside the `next-gen-ui-agent` repository:
+If you're developing alongside the `next-gen-ui-agent` repository and would like to keep picking up local changes from it:
 
 ```sh
 # Uninstall any existing versions
@@ -49,16 +49,9 @@ pip install -e .
 
 ## Usage
 
-Once installed, the renderer is automatically discovered by Next Gen UI Agent through the entry point system. To use it, configure your Next Gen UI Agent to use `hbc-example-rhds` as the component system.
+Once installed, the renderer is automatically discovered by Next Gen UI Agent through the entry point system. It depends how you run the agent but to use the HBC renderer, configure your Next Gen UI Agent to use `hbc-example-rhds` as the component system.
 
-Example:
-```python
-from next_gen_ui_agent import NextGenUIAgent
-
-agent = NextGenUIAgent()
-# Use "hbc-example-rhds" as the component system name
-rendition = agent.design_system_handler(components, "hbc-example-rhds")
-```
+For example when you run Next Gen UI Agent as MCP server container you have to configure `NGUI_COMPONENT_SYSTEM` environment variable.
 
 ## Supported Components
 
@@ -71,7 +64,7 @@ This example renderer supports:
 To create your own HBC renderer based on this example:
 
 1. Copy this directory
-2. Update the `CUSTOM_HBC_COMPONENTS` list in `hbc_renderer.py` with your component names
+2. Update the `CUSTOM_HBC_COMPONENTS` list in `hbc_renderer.py` with your component names. Comments in this file provide more information about further possible customisation of the renderer.
 3. Create Jinja templates in the `templates/` directory matching your component names
 4. Update the `get_component_system_name()` method to return your renderer name
 5. Update `setup.py` with your package name and entry points

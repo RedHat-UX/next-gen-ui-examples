@@ -38,7 +38,7 @@ def test_renderer_hbc_example_component() -> None:
         }
     )
 
-    rendition = agent.design_system_handler([component], "hbc-example-rhds")[0].content
+    rendition = agent.generate_rendering(component, "hbc-example-rhds").content
     print(rendition)
 
     # Verify the rendered output contains expected elements
@@ -70,7 +70,7 @@ def test_renderer_one_card_standard_component() -> None:
         }
     )
 
-    rendition = agent.design_system_handler([component], "hbc-example-rhds")[0].content
+    rendition = agent.generate_rendering(component, "hbc-example-rhds").content
     print(rendition)
 
     # Verify the rendered output contains expected RHDS elements for one-card
