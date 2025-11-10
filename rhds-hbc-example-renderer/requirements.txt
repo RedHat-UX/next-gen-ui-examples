@@ -1,0 +1,10 @@
+next_gen_ui_agent
+next_gen_ui_rhds_renderer
+jinja2
+next_gen_ui_testing
+
+# Local Development:
+# For local development, you may need to install packages from the next-gen-ui-agent repository:
+# pip uninstall -y next_gen_ui_agent next_gen_ui_rhds_renderer next_gen_ui_testing
+# pip install ../../next-gen-ui-agent/dist/next_gen_ui*.whl
+

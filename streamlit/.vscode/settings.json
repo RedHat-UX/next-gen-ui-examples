@@ -1,0 +1,7 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/streamlit/.venv/bin/python",
+    "python.analysis.extraPaths": [
+        "streamlit"
+    ]
+}
+

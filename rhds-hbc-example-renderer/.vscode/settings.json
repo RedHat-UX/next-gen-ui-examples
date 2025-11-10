@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/rhds-hbc-example-renderer/.venv/bin/python",
+    "python.analysis.extraPaths": [
+        "rhds-hbc-example-renderer"
+    ]
+}
