@@ -1,6 +1,6 @@
 # Next Gen UI Red Hat Hand Build Component Example Renderer extension for RHDS
 
-This package provides an example implementation of how to extend the Red Hat Design System (RHDS) renderer to support custom Hand Build Components (HBC) for the Next Gen UI Agent.
+This package provides an example implementation of how to extend the [Red Hat Design System (RHDS)](https://redhat-ux.github.io/next-gen-ui-agent/guide/renderer/rhds/) renderer to support custom [Hand Build Components (HBC)](https://redhat-ux.github.io/next-gen-ui-agent/guide/data_ui_blocks/hand_build_components/) for the Next Gen UI Agent.
 
 ## Installation
 
