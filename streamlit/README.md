@@ -49,21 +49,6 @@ There is nothing to set up. Just run the example.
 streamlit run movies_langgraph_app.py
 ```
 
-## ACP Examples
-
-Run Movies agent and NGUI agent first:
-
-```sh
-python movies_acp_langgraph_agent.py
-python ngui_acp_agent.py
-```
-
-```sh
-streamlit run movies_acp_app.py
-```
-
-
-
 ## Llama-stack Examples
 
 ### Llama-stack setup

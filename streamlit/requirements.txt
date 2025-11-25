@@ -10,9 +10,6 @@ langchain-openai
 langchain
 next_gen_ui_langgraph
 
-acp-sdk>=0.8.1
-# beeai-framework
-
 # Local Development:
 # pip uninstall -y ../../next-gen-ui-agent/dist/next_gen_ui*.whl
 # pip install ../../next-gen-ui-agent/dist/next_gen_ui*.whl
